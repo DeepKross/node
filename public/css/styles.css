@@ -1,7 +1,73 @@
-body {
-    font-family: "Lato", "Helvetica", Helvetica, sans-serif;
-    background: #aa9a96;
-    color: #f7df1e;
-    padding: 20px;
-    letter-spacing: 1px;
+body{
+    background-color: #f5f5f5;
+    font-family: 'monospace', monospace;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #292b2c;
+}
+
+h1{
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+/* Make the image small size and align it to right and make it shadow-box
+
+ */
+.poster {
+    width: 20rem;
+    height: 20rem;
+    float: left;
+    box-shadow: 5px 5px 5px #888888;
+    margin: 1rem;
+}
+
+/* make 3 classes .year .director .plot with nice font size and color */
+
+.year {
+    font-size: 1.5em;
+    color: #292b2c;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.director {
+    font-size: 1.5em;
+    color: #292b2c;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+.plot {
+    font-size: 1.5em;
+    color: #292b2c;
+    padding: 1rem;
+    margin: 1rem;
+}
+
+/* make a .actor li nice and beautiful
+
+ */
+.actors-list {
+    list-style: none; /* Remove the bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+/* Style the list items */
+.actor {
+    padding: 10px; /* Add some padding around each item */
+    margin-bottom: 10px; /* Add some space between each item */
+    background-color: #f2f2f2; /* Set a background color for the items */
+    border-radius: 5px; /* Add rounded corners to the items */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add a box shadow to the items */
+    transition: background-color 0.3s ease-in-out; /* Add a smooth transition effect */
+}
+
+/* Style the list items when hovered over */
+.actor:hover {
+    background-color: #e6e6e6; /* Change the background color when hovered over */
+    cursor: pointer; /* Change the cursor to a hand pointer when hovered over */
 }
