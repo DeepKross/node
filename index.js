@@ -13,15 +13,19 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+//check if the data and required keys are valid
 function isValidData(data, requiredKeys) {
 
-    for (const key of requiredKeys) {
-        if (!data.hasOwnProperty(key)) {
+    for (let i = 0; i < requiredKeys.length; i++) {
+        if (!(requiredKeys[i] in data)) {
             return false;
         }
     }
+    // If all elements in the array are keys in the object, return true
+    return true;
 }
 
+//function for getting template path
 function promptForTemplatePath(callback) {
     rl.question('Please enter absolute path to EJS template file: ', (input) => {
         if (fs.existsSync(input)) {
@@ -34,6 +38,7 @@ function promptForTemplatePath(callback) {
     });
 }
 
+//function for getting template variables
 function getTemplateVariables(templatePath) {
     const ejsVariableRegex = /<%[=-]\s*([\w$]+)\s*%>/g;
     const templateContent = fs.readFileSync(templatePath, "utf8");
@@ -47,6 +52,7 @@ function getTemplateVariables(templatePath) {
     return variables;
 }
 
+//function for getting json path
 function getJsonPath(callback) {
     function promptForPath() {
         rl.question('Please enter absolute path to json file: ', (input) => {
@@ -63,6 +69,7 @@ function getJsonPath(callback) {
     promptForPath();
 }
 
+//funct for getting json data
 function getJsonData(path) {
     let raw_data = fs.readFileSync(path, "utf8");
     console.log("Get Json Data");
@@ -72,8 +79,8 @@ function getJsonData(path) {
 
 getJsonPath((jsonPath) => {
     promptForTemplatePath((templatePath) => {
-        const requiredKeys = getTemplateVariables(templatePath);
-        const jsonData = getJsonData(jsonPath);
+        const requiredKeys = getTemplateVariables(templatePath); // keys of the template
+        const jsonData = getJsonData(jsonPath); // data from the json file
 
         console.log(requiredKeys);
         console.log(jsonData);
