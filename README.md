@@ -1,13 +1,11 @@
-# Movie Info Display App
+# Info Display App
 
-This is a simple Node.js application that uses Express and EJS to create a dynamic template handler. The application takes an absolute path to a JSON 
-file containing movie information and displays it on a webpage.
+This is a simple Node.js application that uses Express and EJS to create a dynamic template handler. The application takes an absolute path to a JSON and template (.ejs) file containing information and displays it on a webpage.
 
 ## Features
 
 - Input validation: The application checks if the provided path is valid and if the JSON file exists at the given path.
-- JSON format validation: The application checks if the JSON file contains all the necessary properties, which are:
-"title", "director", "actors", "year", "plot", "poster".
+- JSON format validation: The application checks if the JSON file contains all the necessary properties that are in a templated provided
 - No databases: The application does not use any databases to store or retrieve data.
 
 ## Getting Started
@@ -36,6 +34,10 @@ file containing movie information and displays it on a webpage.
 2. The application will ask for the path to the HTML template file and the data file via the console. Provide the absolute paths to the template and the data files.
 
 3. If both files are found and valid, open a web browser and go to https://localhost:3000 to see the displayed movie information.
+
+### Data for testing
+
+In the project directory there are data folder with valid and invalid data for testing and also there are index.ejs file as a test template.
 
 ## Error Handling
 
